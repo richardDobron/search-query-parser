@@ -1,0 +1,26 @@
+{
+  "name": "dobron/query-string-parser",
+  "description": "A simple parser for advanced search query syntax in PHP.",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Richard Dobron"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.4@dev"
+  },
+  "autoload": {
+    "files": [
+      "src/dobron/SearchQueryParser/helpers.php"
+    ],
+    "psr-0": {
+      "dobron\\SearchQueryParser\\": "src/"
+    }
+  },
+  "minimum-stability": "dev"
+}
