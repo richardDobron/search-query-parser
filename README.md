@@ -170,7 +170,7 @@ array(5) {
 Install it using:
 
 ```shell
-composer require dobron/query-string-parser
+composer require dobron/search-query-parser
 ```
 
 ### Test:
