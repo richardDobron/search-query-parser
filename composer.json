@@ -1,7 +1,7 @@
 {
   "name": "dobron/search-query-parser",
   "description": "A simple parser for advanced search query syntax in PHP.",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "license": "MIT",
   "authors": [
     {

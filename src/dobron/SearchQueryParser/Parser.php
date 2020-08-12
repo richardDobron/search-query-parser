@@ -264,7 +264,7 @@ class Parser
     {
         $keyword = $this->cleanKeyword($keyword);
 
-        return in_array($keyword, $this->options['ranges']);
+        return in_array($keyword, $this->options['ranges'], true);
     }
 
     /**
@@ -276,7 +276,7 @@ class Parser
     {
         $keyword = $this->cleanKeyword($keyword);
 
-        return in_array($keyword, $this->options['keywords']);
+        return in_array($keyword, $this->options['keywords'], true);
     }
 
     /**

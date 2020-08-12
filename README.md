@@ -4,8 +4,10 @@ The Query String Parser library performs search query text parsing.
 
 This library is perfect for integrating complex search (like Google search) into your application. Small part of base code (javascript) is come from https://github.com/nepsilon/search-query-parser
 
-## Example usage:
+## Example usage of Parser:
 ```php
+require (__DIR__."/vendor/autoload.php");
+
 $parser = new dobron\SearchQueryParser\Parser([
   'keywords' => 'site,title,inurl'
 ]);
@@ -149,6 +151,42 @@ array(5) {
 * `keywords`, that can be separated by commas (,). Accepts an array of strings.
 * `ranges`, that can be separated by a hyphen (-). Accepts an array of strings.
 * `offsets`, a boolean controls the behaviour of the returned query. If set to `true`, the query will contain the offsets object. If set to `false`, the query will not contain the offsets object. Defaults to `true`.
+
+## Example usage of Compiler:
+```php
+require(__DIR__."/vendor/autoload.php");
+
+$parser = new dobron\SearchQueryParser\Compiler([
+    // field, value
+    ['site', 'en.wikipedia.org/'],
+
+    // field, value
+    ['title', 'Slovakia'],
+
+    // value (array or string)
+    [['cities and towns']],
+
+    // or:
+    // value, negate
+    // ['cities and towns', false],
+
+    // field, value, operator, negate
+    [null, 'education', '=', true],
+
+    // field, value, operator
+    ['inurl', 'wiki/', '=']
+]);
+
+echo $parser->compile();
+```
+
+## Output:
+```text
+site:en.wikipedia.org/ title:Slovakia "cities and towns" -education inurl:wiki/
+```
+
+### Options:
+* `alwaysQuote`, a boolean controls the behaviour of the searched query. If set to `true`, the query will contain the quotes. If set to `false`, the query will not contain the quotes. Defaults to `false`.
 
 ### Queries:
 
